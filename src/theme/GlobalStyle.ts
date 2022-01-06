@@ -13,7 +13,12 @@ const GlobalStyle = createGlobalStyle`
     overflow: scroll;
     overflow-x: hidden;
     height: 100vh;
-    scroll-snap-type: y mandatory;
+  }
+
+  @media only screen and (min-width: 600px) {
+      html {
+          scroll-snap-type: y mandatory;
+      }
   }
   
   body {
