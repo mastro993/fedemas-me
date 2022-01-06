@@ -66,6 +66,7 @@
     "autoprefixer": "9",
     "postcss": "7",
     "prettier": "2.3.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "serve": "^13.0.2"
   }
 }
