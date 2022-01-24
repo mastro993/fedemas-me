@@ -1,31 +1,30 @@
 import React from "react";
-import { Section } from "../../components/Section";
-import SkillTag from "./components/SkillTag";
-import { SkillItem, SkillItemGroup } from "./types";
 import {
-  SiAndroid, SiBitcoin, SiBlockchaindotcom, SiChakraui,
-  SiCplusplus, SiDart,
-  SiFlutter, SiGit,
+  SiAndroid,
+  SiCplusplus,
+  SiDart,
+  SiFlutter,
+  SiGit,
   SiGo,
   SiIos,
   SiJavascript,
   SiKotlin,
-  SiLinux,
-  SiMacos, SiNextdotjs,
-  SiPython, SiQt,
-  SiReact, SiSolidity,
-  SiSwift, SiTailwindcss,
+  SiNextdotjs,
+  SiPython,
+  SiQt,
+  SiReact,
+  SiSolidity,
+  SiSwift,
   SiThreedotjs,
   SiTypescript,
-  SiVuedotjs, SiWakatime, SiWeb3Dotjs,
-  SiWindows,
+  SiVuedotjs,
+  SiWeb3Dotjs,
 } from "react-icons/si";
-import styled from "styled-components";
+import { Section } from "../../components/Section";
 import SkillGroup from "./components/SkillGroup";
-
+import { SkillItemGroup } from "./types";
 
 const Skills: React.FC = () => {
-
   const web: SkillItemGroup = {
     label: "web",
     color: "green-400",
@@ -67,22 +66,18 @@ const Skills: React.FC = () => {
     ],
   };
 
-
   return (
     <Section>
       <p className="md:text-3xl text-2xl font-bold uppercase font-bold italic">Skills</p>
-      <p className="md:text-lg text-base  text-gray-400 uppercase font-bold italic">Programming languages, frameworks
-        and technologies</p>
+      <p className="md:text-lg text-base  text-gray-400 uppercase font-bold italic">
+        Programming languages, frameworks and technologies
+      </p>
 
       <div className="flex flex-col md:gap-4 gap-2 mt-6">
-
         <SkillGroup group={web} />
         <SkillGroup group={mobile} />
         <SkillGroup group={other} />
-
       </div>
-
-
     </Section>
   );
 };
