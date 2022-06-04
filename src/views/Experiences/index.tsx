@@ -6,7 +6,7 @@ import { JobItem } from "./types";
 const Experiences: React.FC = () => {
   const items: JobItem[] = [
     {
-      companyName: "Develon",
+      companyName: "Develon srl",
       role: "Frontend Engineer",
       location: "Vicenza, Italy (Remote)",
       startDate: new Date(2022, 1),
@@ -15,7 +15,7 @@ const Experiences: React.FC = () => {
       companyLogoSrc: "./assets/develon.jpeg",
     },
     {
-      companyName: "Fincantieri NexTech",
+      companyName: "Fincantieri NexTech SpA",
       role: "Software Engineer",
       location: "La Spezia, Italy",
       startDate: new Date(2019, 3),
@@ -41,7 +41,7 @@ const Experiences: React.FC = () => {
 
   return (
     <Section>
-      <p className="md:text-3xl text-2xl font-bold uppercase font-bold italic">Experiences</p>
+      <p className="md:text-3xl text-2xl font-bold uppercase italic">Work experiences</p>
       <p className="md:text-lg text-base text-gray-400 uppercase font-bold italic">What I do for living</p>
       <div className="flex flex-col mt-6 md:gap-4 gap-2">
         {items.map((it) => (

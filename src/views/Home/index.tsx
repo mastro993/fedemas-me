@@ -1,3 +1,4 @@
+import Projects from "views/Projects";
 import Contacts from "../Contacts";
 import Education from "../Education";
 import Experiences from "../Experiences";
@@ -9,9 +10,9 @@ const Home: React.FC = () => {
   return (
     <>
       <Introduction />
-      {/*<Projects />*/}
-      <Skills />
+      <Projects />
       <Experiences />
+      <Skills />
       <Education />
       <Contacts />
       <PepeBand />
