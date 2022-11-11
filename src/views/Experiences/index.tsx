@@ -6,10 +6,20 @@ import { JobItem } from "./types";
 const Experiences: React.FC = () => {
   const items: JobItem[] = [
     {
-      companyName: "Develon srl",
-      role: "Frontend Engineer",
+      companyName: "PagoPA S.p.A.",
+      role: "Mobile Software Engineer",
+      location: "Rome, Italy (Remote)",
+      startDate: new Date(2022, 10),
+      summary: "Development of the IO Mobile App with React Native",
+      type: "Full time",
+      companyLogoSrc: "./assets/pagopa.jpeg",
+    },
+    {
+      companyName: "Develon S.r.l.",
+      role: "Mobile Software Engineer",
       location: "Vicenza, Italy (Remote)",
       startDate: new Date(2022, 1),
+      endDate: new Date(2022, 10),
       summary: "Development of the Pharmaround Mobile App with Flutter",
       type: "Full time",
       companyLogoSrc: "./assets/develon.jpeg",
@@ -20,16 +30,13 @@ const Experiences: React.FC = () => {
       location: "La Spezia, Italy",
       startDate: new Date(2019, 3),
       endDate: new Date(2022, 1),
-      summary:
-        "Desktop Applications development with wxWidgets and Qt.\n" +
-        "Frontend Development with reactive frameworks (ReactJs, VueJs) with Javascript (ES6) and Typescript.\n" +
-        "Embedded and UNIX based systems software development (C/C++).",
+      summary: "Desktop and embedded software development with C/C++",
       type: "Full time",
       companyLogoSrc: "./assets/nextech.jpg",
     },
     {
       companyName: "Esaedro srl",
-      role: "Android Developer",
+      role: "Android Engineer",
       location: "Parma, Italy",
       startDate: new Date(2018, 9),
       endDate: new Date(2019, 2),
