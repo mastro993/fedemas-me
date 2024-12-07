@@ -3,7 +3,7 @@ import { Section } from "../../components/Section";
 import { EducationCard } from "./EducationCard";
 import { EducationItem } from "./types";
 
-const items: ReadonlyArray<EducationItem> = [
+const educationItems: ReadonlyArray<EducationItem> = [
   {
     title: "Computer, Electronic and Communications Engineering (L-8)",
     type: "Bachelor of Engineering - BE",
@@ -23,12 +23,10 @@ const items: ReadonlyArray<EducationItem> = [
 
 const Education: React.FC = () => {
   return (
-    <Section>
-      <p className="md:text-3xl text-2xl uppercase font-bold italic">Education</p>
-      <p className="md:text-lg text-base text-gray-400 uppercase font-bold italic">Good ol' days</p>
-      <div className="mt-6 flex flex-col md:gap-4 gap-2">
-        {items.map((it) => (
-          <EducationCard key={it.title} item={it} />
+    <Section title="Education" subtitle="Good ol' days">
+      <div className="mt-6 px-4 py-3 flex flex-col bg-white bg-opacity-5 backdrop-filter backdrop-blur-sm rounded-md">
+        {educationItems.map((education) => (
+          <EducationCard key={education.title} education={education} />
         ))}
       </div>
     </Section>

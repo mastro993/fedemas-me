@@ -2,7 +2,7 @@ import { Section } from "../../components/Section";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectItem } from "./type";
 
-const items: ReadonlyArray<ProjectItem> = [
+const projects: ReadonlyArray<ProjectItem> = [
   {
     title: "VerificaC19 for Flutter",
     briefDescription: "DGC validation package",
@@ -16,13 +16,11 @@ const items: ReadonlyArray<ProjectItem> = [
 
 const Projects = () => {
   return (
-    <Section>
-      <p className="md:text-3xl text-2xl uppercase font-bold italic">Projects</p>
-      <p className="md:text-lg text-base text-gray-400 uppercase font-bold italic">Creations and collabs</p>
+    <Section title="Projects" subtitle="Creations and collabs">
       <div className="flex mt-8 overflow-visible">
         <div className="flex flex-nowrap space-x-6 ">
-          {items.map((it) => (
-            <ProjectCard key={it.title} item={it} />
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </div>

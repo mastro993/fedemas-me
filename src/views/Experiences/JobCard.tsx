@@ -1,30 +1,37 @@
 import moment from "moment";
-import { JobItem } from "./types";
+import { WorkExperienceItem } from "./types";
 
-type JobCardProps = {
-  item: JobItem;
+type WorkExperienceCardProps = {
+  experience: WorkExperienceItem;
 };
 
-const JobCard = ({ item }: JobCardProps) => {
+const WorkExperienceCard = ({ experience }: WorkExperienceCardProps) => {
   return (
-    <div className=" overflow-hidden bg-white bg-opacity-5 backdrop-filter backdrop-blur-sm border-l-2 border-blue-400 ">
-      <div className="flex flex-row gap-5 p-5">
-        <img className="rounded-xl md:h-20 h-14" src={item.companyLogoSrc} alt="Company logo" />
+    <div className="overflow-hidden ">
+      <div className="flex flex-row gap-4">
+        <div className="py-2 px-3">
+          <img className="rounded-xl md:h-20 h-14" src={experience.companyLogoSrc} alt="Company logo" />
+        </div>
         <div className="border-l-2 border-gray-200 border-opacity-10" />
-        <div className="flex flex-col">
-          <p className="text-sm font-semibold text-gray-400">
-            {moment(item.startDate).format("M/yyyy")} -{" "}
-            {item.endDate ? moment(item.endDate).format("M/yyyy") : "Current"}
-          </p>
-          <p className="text-2xl font-bold">{item.role}</p>
-          <p className="flex items-center text-lg font-semibold text-gray-400">
-            {item.companyName} • {item.type}
-          </p>
-          {item.summary && <p className="md:inline-flex hidden pt-2">{item.summary}</p>}
+        <div className="py-2 px-3 mb-5">
+          <div className="flex flex-col">
+            {experience.roles.map(({ startDate, endDate, type, summary, role }) => (
+              <>
+                <p className="text-sm font-semibold text-gray-400">
+                  {moment(startDate).format("M/yyyy")} - {endDate ? moment(endDate).format("M/yyyy") : "Current"}
+                </p>
+                <p className="text-2xl font-bold">{role}</p>
+                <p className="flex items-center text-lg font-semibold text-gray-400">
+                  {experience.companyName} • {type}
+                </p>
+                {summary && <p className="md:inline-flex hidden pt-2">{summary}</p>}
+              </>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export { JobCard };
+export { WorkExperienceCard };
