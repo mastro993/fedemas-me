@@ -1,9 +1,8 @@
-import React from "react";
-import { FaCircleNotch } from "react-icons/all";
+import { FaCircleNotch } from "react-icons/fa";
 
-const PageLoader: React.FC = () => {
+const PageLoader = () => {
   return (
-    <div className="w-screen h-screen fixed block  opacity-75 z-50 flex justify-center items-center">
+    <div className="w-screen h-screen fixed opacity-75 z-50 flex justify-center items-center">
       <span className="text-white opacity-75">
         <FaCircleNotch size={50} className="animate-spin" />
       </span>
@@ -11,4 +10,4 @@ const PageLoader: React.FC = () => {
   );
 };
 
-export default PageLoader;
+export { PageLoader };

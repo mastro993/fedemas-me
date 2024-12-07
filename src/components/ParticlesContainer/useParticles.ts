@@ -9,7 +9,7 @@ import {
   Points,
   PointsMaterial,
   Scene,
-  SphereBufferGeometry,
+  SphereGeometry,
   TextureLoader,
   WebGLRenderer,
 } from "three";
@@ -18,17 +18,17 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass";
 import { BokehPass } from "three/examples/jsm/postprocessing/BokehPass";
 
-const useParticles = ({ isDark }) => {
-  const canvasRef = useRef<HTMLCanvasElement>();
+const useParticles = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     if (!canvasRef.current) {
       return;
     }
 
-    const backgroundColor = isDark ? "#21282a" : "#ffffff";
-    const torusColor = isDark ? "#aaaaaa" : "#aaaaaa";
-    const particlesColor = isDark ? "#aaaaaa" : "#aaaaaa";
+    const backgroundColor = "#21282a";
+    const torusColor = "#aaaaaa";
+    const particlesColor = "#aaaaaa";
 
     const textureLoader = new TextureLoader();
 
@@ -36,7 +36,7 @@ const useParticles = ({ isDark }) => {
     const scene = new Scene();
 
     // Objects
-    const sphereGeometry = new SphereBufferGeometry(0.7, 32, 32);
+    const sphereGeometry = new SphereGeometry(0.7, 32, 32);
     const particlesGeometry = new BufferGeometry();
     const particlesCount = 5000;
     const particlesPositionArray = new Float32Array(particlesCount * 3);
@@ -107,9 +107,6 @@ const useParticles = ({ isDark }) => {
       focus: 0.01,
       aperture: 0.00001,
       maxblur: 0.5,
-
-      width: sizes.width,
-      height: sizes.height,
     });
 
     composer.addPass(renderPass);
@@ -179,7 +176,7 @@ const useParticles = ({ isDark }) => {
       window.removeEventListener("resize", onResize);
       window.removeEventListener("mousemove", onMouseMove);
     };
-  }, [canvasRef, isDark]);
+  }, [canvasRef]);
 
   return { canvasRef };
 };

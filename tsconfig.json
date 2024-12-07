@@ -3,11 +3,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,19 +16,14 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "strictNullChecks": false,
-    "noImplicitAny": false,
+    "strictNullChecks": true, // Changed from false to true
+    "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
     "downlevelIteration": true,
     //"noUnusedLocals": true,
     "emitBOM": true,
-    "charset": "utf8"
+    "ignoreDeprecations": "5.0"
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.tsx"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }

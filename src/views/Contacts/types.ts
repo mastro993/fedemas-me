@@ -1,8 +1,8 @@
-import {IconType} from "react-icons";
+import { IconType } from "react-icons";
 
-export interface ContactItem {
-    label: string,
-    color: string,
-    href: string,
-    icon: IconType,
-}
+export type ContactItem = {
+  label: string;
+  color: string;
+  href: string;
+  icon: IconType;
+};
