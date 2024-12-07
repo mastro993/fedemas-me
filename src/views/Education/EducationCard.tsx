@@ -1,11 +1,10 @@
-import React from "react";
-import { EducationItem } from "../types";
+import { EducationItem } from "./types";
 
-interface EducationCardProps {
+type EducationCardProps = {
   item: EducationItem;
-}
+};
 
-const EducationCard: React.FC<EducationCardProps> = ({ item }) => {
+const EducationCard = ({ item }: EducationCardProps) => {
   return (
     <div className="bg-white bg-opacity-5 overflow-hidden backdrop-filter backdrop-blur-sm border-l-2 border-red-400">
       <div className="p-5">
@@ -22,4 +21,4 @@ const EducationCard: React.FC<EducationCardProps> = ({ item }) => {
   );
 };
 
-export default EducationCard;
+export { EducationCard };

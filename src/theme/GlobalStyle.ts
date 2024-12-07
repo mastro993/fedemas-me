@@ -1,10 +1,9 @@
-import {createGlobalStyle} from "styled-components";
-import {CustomTheme} from "./types";
+import { createGlobalStyle } from "styled-components";
+import { CustomTheme } from "./types";
 import "./style.css";
 
 declare module "styled-components" {
-    export interface DefaultTheme extends CustomTheme {
-    }
+  export interface DefaultTheme extends CustomTheme {}
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -22,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
-    background-color: ${({theme}) => theme.colors.background};
+    background-color: "#123456";
     
 
     img {

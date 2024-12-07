@@ -1,12 +1,11 @@
 import moment from "moment";
-import React from "react";
-import { ProjectItem } from "../type";
+import { ProjectItem } from "./type";
 
 interface ProjectCardProps {
   item: ProjectItem;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ item }) => {
+const ProjectCard = ({ item }: ProjectCardProps) => {
   console.log(item.releaseDate);
   return (
     <div
@@ -26,4 +25,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ item }) => {
   );
 };
 
-export default ProjectCard;
+export { ProjectCard };

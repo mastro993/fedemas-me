@@ -1,12 +1,11 @@
 import moment from "moment";
-import React from "react";
-import { JobItem } from "../types";
+import { JobItem } from "./types";
 
-interface JobCardProps {
+type JobCardProps = {
   item: JobItem;
-}
+};
 
-const JobCard: React.FC<JobCardProps> = ({ item }) => {
+const JobCard = ({ item }: JobCardProps) => {
   return (
     <div className=" overflow-hidden bg-white bg-opacity-5 backdrop-filter backdrop-blur-sm border-l-2 border-blue-400 ">
       <div className="flex flex-row gap-5 p-5">
@@ -28,4 +27,4 @@ const JobCard: React.FC<JobCardProps> = ({ item }) => {
   );
 };
 
-export default JobCard;
+export { JobCard };

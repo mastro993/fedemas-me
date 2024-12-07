@@ -1,20 +1,20 @@
-import React from "react";
 import { Section } from "../../components/Section";
-import ProjectCard from "./components/ProjectCard";
+import { ProjectCard } from "./ProjectCard";
 import { ProjectItem } from "./type";
 
-const Projects: React.FC = () => {
-  const items: ProjectItem[] = [
-    {
-      title: "VerificaC19 for Flutter",
-      briefDescription: "DGC validation package",
-      description:
-        "VerificaC19 for Flutter is a Flutter/Dart package that allows Flutter applications to validate Digital Green Certificates (Covid19 GreenPass).",
-      href: "https://github.com/mastro993/verificaC19-flutter",
-      imageSrc: "./assets/verificaC19.jpg",
-      releaseDate: new Date(2021, 11, 29),
-    },
-  ];
+const items: ReadonlyArray<ProjectItem> = [
+  {
+    title: "VerificaC19 for Flutter",
+    briefDescription: "DGC validation package",
+    description:
+      "VerificaC19 for Flutter is a Flutter/Dart package that allows Flutter applications to validate Digital Green Certificates (Covid19 GreenPass).",
+    href: "https://github.com/mastro993/verificaC19-flutter",
+    imageSrc: "./assets/verificaC19.jpg",
+    releaseDate: new Date(2021, 11, 29),
+  },
+];
+
+const Projects = () => {
   return (
     <Section>
       <p className="md:text-3xl text-2xl uppercase font-bold italic">Projects</p>
@@ -30,4 +30,4 @@ const Projects: React.FC = () => {
   );
 };
 
-export default Projects;
+export { Projects };

@@ -1,9 +1,9 @@
-import Projects from "views/Projects";
-import Contacts from "../Contacts";
-import Education from "../Education";
-import Experiences from "../Experiences";
-import Introduction from "../Introduction";
-import PepeBand from "./components/PepeBand";
+import { Projects } from "views/Projects";
+import { Contacts } from "../Contacts";
+import { Education } from "../Education";
+import { Experiences } from "../Experiences";
+import { Introduction } from "../Introduction";
+import { PepeBand } from "./PepeBand";
 
 const Home: React.FC = () => {
   return (

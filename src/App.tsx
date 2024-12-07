@@ -1,20 +1,21 @@
-import React, { lazy, Suspense } from "react";
-import GlobalStyle from "./theme/GlobalStyle";
-import PageLoader from "./components/PageLoader";
-import { Navigation } from "./components/Navigation";
+import { lazy, Suspense } from "react";
+import { Header } from "./components/Header";
+import { PageLoader } from "./components/PageLoader";
 import { ParticlesContainer } from "./components/ParticlesContainer";
+import { GlobalStyle } from "./theme";
 
 const Home = lazy(() => import("./views/Home"));
 
 function App() {
   return (
-    <ParticlesContainer>
+    <>
+      <GlobalStyle />
+      <ParticlesContainer />
       <Suspense fallback={<PageLoader />}>
-        <GlobalStyle />
-        <Navigation />
+        <Header />
         <Home />
       </Suspense>
-    </ParticlesContainer>
+    </>
   );
 }
 

@@ -1,8 +1,7 @@
-import React from "react";
 import { Section } from "../../components/Section";
-import WavingHand from "./components/WavingHand";
+import { WavingHand } from "./WavingHand";
 
-const Introduction: React.FC = () => {
+const Introduction = () => {
   return (
     <Section>
       <p className="md:text-6xl text-4xl font-extrabold py-6 uppercase italic">
@@ -22,4 +21,4 @@ const Introduction: React.FC = () => {
   );
 };
 
-export default Introduction;
+export { Introduction };
