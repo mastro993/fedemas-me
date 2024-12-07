@@ -19,8 +19,8 @@ const Projects = () => {
     <Section>
       <p className="md:text-3xl text-2xl uppercase font-bold italic">Projects</p>
       <p className="md:text-lg text-base text-gray-400 uppercase font-bold italic">Creations and collabs</p>
-      <div className="flex overflow-clip mt-8">
-        <div className="flex flex-nowrap space-x-6">
+      <div className="flex mt-8 overflow-visible">
+        <div className="flex flex-nowrap space-x-6 ">
           {items.map((it) => (
             <ProjectCard key={it.title} item={it} />
           ))}
