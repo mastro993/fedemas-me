@@ -11,7 +11,7 @@ const Projects: React.FC = () => {
       description:
         "VerificaC19 for Flutter is a Flutter/Dart package that allows Flutter applications to validate Digital Green Certificates (Covid19 GreenPass).",
       href: "https://github.com/mastro993/verificaC19-flutter",
-      imageSrc: "https://www.dgc.gov.it/web/img/img-verificaC19.png",
+      imageSrc: "./assets/verificaC19.jpg",
       releaseDate: new Date(2021, 11, 29),
     },
   ];
