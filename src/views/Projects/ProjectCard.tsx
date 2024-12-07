@@ -6,7 +6,6 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ item }: ProjectCardProps) => {
-  console.log(item.releaseDate);
   return (
     <div
       className="w-80 h-full bg-white bg-opacity-5 backdrop-filter backdrop-blur-sm overflow-hidden hover:scale-105 duration-500 transform transition cursor-pointer"

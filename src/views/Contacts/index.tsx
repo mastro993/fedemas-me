@@ -35,7 +35,7 @@ const Contacts = () => {
       </p>
       <div className="flex mt-8 flex-wrap md:gap-4 gap-2">
         {items.map((item) => (
-          <ContactLink contact={item} />
+          <ContactLink key={item.label} contact={item} />
         ))}
       </div>
     </Section>

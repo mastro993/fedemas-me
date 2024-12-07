@@ -28,7 +28,7 @@ const Education: React.FC = () => {
       <p className="md:text-lg text-base text-gray-400 uppercase font-bold italic">Good ol' days</p>
       <div className="mt-6 flex flex-col md:gap-4 gap-2">
         {items.map((it) => (
-          <EducationCard item={it} />
+          <EducationCard key={it.title} item={it} />
         ))}
       </div>
     </Section>

@@ -51,7 +51,7 @@ const Experiences = () => {
       <p className="md:text-lg text-base text-gray-400 uppercase font-bold italic">What I do for living</p>
       <div className="flex flex-col mt-6 md:gap-4 gap-2">
         {items.map((it) => (
-          <JobCard item={it} />
+          <JobCard key={it.companyName} item={it} />
         ))}
       </div>
     </Section>

@@ -22,7 +22,7 @@ const Projects = () => {
       <div className="flex overflow-clip mt-8">
         <div className="flex flex-nowrap space-x-6">
           {items.map((it) => (
-            <ProjectCard item={it} />
+            <ProjectCard key={it.title} item={it} />
           ))}
         </div>
       </div>
