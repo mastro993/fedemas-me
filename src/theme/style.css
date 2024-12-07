@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+  }
+
+  @media only screen and (min-width: 600px) {
+      html {
+          scroll-snap-type: y mandatory;
+      }
+  }
+  
+  body {
+    background-color: "#21282a";
+    
+
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+  
+  section {
+    scroll-snap-align: start;
+  }
