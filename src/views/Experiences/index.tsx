@@ -15,6 +15,7 @@ const workExperiences: ReadonlyArray<WorkExperienceItem> = [
         type: "full-time",
       },
     ],
+    skills: ["React Native", "Typescript", "React", "Git", "CI/CD"],
   },
   {
     companyName: "Develon S.r.l.",
@@ -29,6 +30,7 @@ const workExperiences: ReadonlyArray<WorkExperienceItem> = [
         type: "full-time",
       },
     ],
+    skills: ["Flutter", "Dart"],
   },
   {
     companyName: "Fincantieri NexTech SpA",
@@ -43,6 +45,7 @@ const workExperiences: ReadonlyArray<WorkExperienceItem> = [
         type: "full-time",
       },
     ],
+    skills: ["C", "C++"],
   },
   {
     companyName: "Esaedro srl",
@@ -57,6 +60,7 @@ const workExperiences: ReadonlyArray<WorkExperienceItem> = [
         type: "internship",
       },
     ],
+    skills: ["Kotlin", "Android", "Java"],
   },
 ];
 

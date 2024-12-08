@@ -13,4 +13,5 @@ export type WorkExperienceItem = {
   companyLogoSrc: string;
   location: string;
   roles: WorkExperienceRole[];
+  skills?: string[];
 };
