@@ -17,11 +17,13 @@ const WorkExperienceCard = ({ experience, isLast }: WorkExperienceCardProps) => 
       <div className="flex flex-row gap-6">
         {/* Company logo */}
         <div className="flex flex-col items-center">
-          <img className="md:h-16 h-14 p-1 bg-white rounded-md" src={experience.companyLogoSrc} alt="Company logo" />
+          <div className="md:h-16 h-12 md:w-16 w-12 p-1 bg-white rounded-md">
+            <img src={experience.companyLogoSrc} alt="Company logo" />
+          </div>
           {!isLast && <div className="h-full border-l-2 border-white border-opacity-10" />}
         </div>
         {/* Details */}
-        <div className={`mb-5 ${isLast ? "mb-0" : ""}`}>
+        <div className={`mb-0 ${!isLast ? "mb-8" : ""}`}>
           <div className="flex flex-col">
             {experience.roles.map(({ startDate, endDate, type, summary, role }) => (
               <>
@@ -35,15 +37,17 @@ const WorkExperienceCard = ({ experience, isLast }: WorkExperienceCardProps) => 
                 {summary && <p className="md:inline-flex hidden mt-2">{summary}</p>}
               </>
             ))}
-            {experience.skills && (
-              <div className="flex flex-row gap-2 mt-3">
-                {experience.skills.map((skill) => (
-                  <p className="px-3 py-1 text-xs uppercase italic text-white text-opacity-80 bg-white bg-opacity-20 rounded-full">
-                    {skill}
-                  </p>
-                ))}
-              </div>
-            )}
+            <div className="md:inline-flex hidden mt-3">
+              {experience.skills && (
+                <div className="flex flex-row gap-2">
+                  {experience.skills.map((skill) => (
+                    <p className="px-3 py-1 text-xs uppercase italic text-white text-opacity-80 bg-white bg-opacity-20 rounded-full">
+                      {skill}
+                    </p>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

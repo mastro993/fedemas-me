@@ -129,12 +129,12 @@ const useParticles = () => {
 
       // Update objects
 
-      sphereMesh.rotation.y = 0.3 * elapsedTime;
+      sphereMesh.rotation.y = 0.1 * elapsedTime;
       sphereMesh.rotation.x = 0.00005 * mouseDy;
       sphereMesh.rotation.z = 0.00005 * mouseDx;
 
-      particlesMesh.rotation.x = 0.00005 * -mouseDy + 0.005 * elapsedTime;
-      particlesMesh.rotation.y = 0.00005 * -mouseDx + 0.005 * elapsedTime;
+      particlesMesh.rotation.x = 0.00005 * -mouseDy + 0.002 * elapsedTime;
+      particlesMesh.rotation.y = 0.00005 * -mouseDx + 0.002 * elapsedTime;
 
       particlesMesh.position.y = 0.0001 * window.scrollY;
 
