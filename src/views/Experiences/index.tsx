@@ -63,10 +63,16 @@ const workExperiences: ReadonlyArray<WorkExperienceItem> = [
 const Experiences = () => {
   return (
     <Section title="Experiences" subtitle="What I do for living">
-      <div className="flex flex-col mt-6 px-4 py-3 bg-white bg-opacity-5 backdrop-filter backdrop-blur-sm rounded-md">
-        {workExperiences.map((experience) => (
-          <WorkExperienceCard key={experience.companyName} experience={experience} />
-        ))}
+      <div className="mt-6 p-6 bg-white bg-opacity-5 backdrop-filter backdrop-blur-sm rounded-md">
+        <div className="flex flex-col">
+          {workExperiences.map((experience, index) => (
+            <WorkExperienceCard
+              key={experience.companyName}
+              experience={experience}
+              isLast={index === workExperiences.length - 1}
+            />
+          ))}
+        </div>
       </div>
     </Section>
   );

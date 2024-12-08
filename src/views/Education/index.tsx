@@ -6,8 +6,9 @@ import { EducationItem } from "./types";
 const educationItems: ReadonlyArray<EducationItem> = [
   {
     title: "Computer, Electronic and Communications Engineering (L-8)",
+    institute: "Università degli Studi di Parma",
+    logoUrl: "./assets/unipr.png",
     type: "Bachelor of Engineering - BE",
-    place: "Università degli Studi di Parma",
     startingYear: 2013,
     endingYear: 2018,
     details: 'Thesis: "Development of an App for Sustainable Mobility through Gamification"',
@@ -15,7 +16,7 @@ const educationItems: ReadonlyArray<EducationItem> = [
   {
     title: "Accounting",
     type: "Diploma",
-    place: "Istituto P. Belmesseri, Fivizzano (MS) Italy",
+    institute: "Istituto P. Belmesseri, Fivizzano (MS) Italy",
     startingYear: 2008,
     endingYear: 2013,
   },
@@ -24,10 +25,12 @@ const educationItems: ReadonlyArray<EducationItem> = [
 const Education: React.FC = () => {
   return (
     <Section title="Education" subtitle="Good ol' days">
-      <div className="mt-6 px-4 py-3 flex flex-col bg-white bg-opacity-5 backdrop-filter backdrop-blur-sm rounded-md">
-        {educationItems.map((education) => (
-          <EducationCard key={education.title} education={education} />
-        ))}
+      <div className="mt-6 p-6 bg-white bg-opacity-5 backdrop-filter backdrop-blur-sm rounded-md">
+        <div className="flex flex-col">
+          {educationItems.map((education, index) => (
+            <EducationCard key={education.title} education={education} isLast={index === educationItems.length - 1} />
+          ))}
+        </div>
       </div>
     </Section>
   );

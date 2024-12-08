@@ -1,30 +1,38 @@
 import moment from "moment";
-import { WorkExperienceItem } from "./types";
+import { WorkExperienceItem, WorkExperienceType } from "./types";
 
 type WorkExperienceCardProps = {
   experience: WorkExperienceItem;
+  isLast: boolean;
 };
 
-const WorkExperienceCard = ({ experience }: WorkExperienceCardProps) => {
+const roleTypeToString: { [type in WorkExperienceType]: string } = {
+  "full-time": "Full-time",
+  internship: "Internship",
+};
+
+const WorkExperienceCard = ({ experience, isLast }: WorkExperienceCardProps) => {
   return (
-    <div className="overflow-hidden ">
-      <div className="flex flex-row gap-4">
-        <div className="py-2 px-3">
-          <img className="rounded-xl md:h-20 h-14" src={experience.companyLogoSrc} alt="Company logo" />
+    <div className="overflow-hidden">
+      <div className="flex flex-row gap-6">
+        {/* Company logo */}
+        <div className="flex flex-col items-center">
+          <img className="md:h-16 h-14 p-1 bg-white rounded-md" src={experience.companyLogoSrc} alt="Company logo" />
+          {!isLast && <div className="h-20 border-l-2 border-white border-opacity-10" />}
         </div>
-        <div className="border-l-2 border-gray-200 border-opacity-10" />
-        <div className="py-2 px-3 mb-5">
+        {/* Details */}
+        <div className="mb-5">
           <div className="flex flex-col">
             {experience.roles.map(({ startDate, endDate, type, summary, role }) => (
               <>
-                <p className="text-sm font-semibold text-gray-400">
+                <h1 className="text-xl font-bold">{role}</h1>
+                <h3 className="text-md font-semibold text-white text-opacity-60 flex items-center ">
+                  {experience.companyName} • {roleTypeToString[type]}
+                </h3>
+                <h5 className="text-sm text-white text-opacity-60 mt-1">
                   {moment(startDate).format("M/yyyy")} - {endDate ? moment(endDate).format("M/yyyy") : "Current"}
-                </p>
-                <p className="text-2xl font-bold">{role}</p>
-                <p className="flex items-center text-lg font-semibold text-gray-400">
-                  {experience.companyName} • {type}
-                </p>
-                {summary && <p className="md:inline-flex hidden pt-2">{summary}</p>}
+                </h5>
+                {summary && <p className="md:inline-flex hidden mt-2">{summary}</p>}
               </>
             ))}
           </div>
