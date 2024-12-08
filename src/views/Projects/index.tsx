@@ -9,7 +9,7 @@ const projects: ReadonlyArray<ProjectItem> = [
     description:
       "VerificaC19 for Flutter is a Flutter/Dart package that allows Flutter applications to validate Digital Green Certificates (Covid19 GreenPass).",
     href: "https://github.com/mastro993/verificaC19-flutter",
-    imageSrc: "./assets/verificaC19.jpg",
+    imageSrc: "./assets/verificac19.jpg",
     releaseDate: new Date(2021, 11, 29),
   },
 ];
