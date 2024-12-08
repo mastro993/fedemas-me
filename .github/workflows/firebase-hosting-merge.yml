@@ -4,8 +4,6 @@
 name: Deploy to Firebase Hosting on merge
 on:
   push:
-    branches:
-      - master
     tags:
       - v*
 jobs:
@@ -13,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
       - run: npm install --legacy-peer-deps && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
